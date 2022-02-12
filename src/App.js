@@ -7,6 +7,7 @@ import NewWorkoutPage from "./pages/NewWorkout";
 import NewPlanPage from "./pages/NewPlan";
 import AllWorkoutsPage from "./pages/AllWorkouts";
 import MainNavigation from "./components/layout/MainNavigation";
+import NavBarTest from "./components/layout/NavBarTest";
 
 function App() {
 
@@ -24,18 +25,25 @@ function App() {
 
   return (
     <div>
-      <MainNavigation />
+      
+      {/* <MainNavigation /> */}
+      <NavBarTest />
+
       <Switch>
-        <Route path="/" exact>
+        <Route path="/" exact >
           <NewWorkoutPage addWorkoutData={getWorkoutData} todos={todos} setTodos={setTodos} fullWorkouts={fullWorkouts} setFullWorkouts={setFullWorkouts}/>
         </Route>
-        <Route path="/all-workouts">
+        <Route path="/all-workouts" >
           <AllWorkoutsPage todos={todos} fullWorkouts={fullWorkouts}/>
         </Route>
-        <Route path="/new-plan">
+        <Route path="/new-plan" >
           <NewPlanPage />
         </Route>
+
       </Switch>
+
+
+      
     </div>
   );
 }
