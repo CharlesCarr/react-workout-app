@@ -6,7 +6,7 @@ import classes from './MainNavigation.module.css';
 function MainNavigation() {
     return (
         <header className={classes.header}>
-            <div className={classes.logo}>Workout App</div>
+            <div className={classes.logo}>Workout Apptest</div>
             <nav>
                 <ul>
                     <li><Link to='/'>New Workout</Link></li>
