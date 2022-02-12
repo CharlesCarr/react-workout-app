@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 
 // Importing components
-
 import Input from '../components/new_workout/Input';
 import TodoList from '../components/TodoList';
 import Modal from '../components/Modal';
 import Backdrop from '../components/Backdrop';
 import Heading from "../components/Heading";
+
+// Import Material UI Components
+import Button from '@mui/material/Button';
 
 
 function NewWorkoutPage(props) {
@@ -81,7 +83,7 @@ function NewWorkoutPage(props) {
         // // testing by adding props after moving state to App
         todos={props.todos} setTodos={props.setTodos}
       />
-      <button onClick={saveWorkoutHandler}>Save Workout</button>
+      <Button onClick={saveWorkoutHandler} variant="contained" size="small" style={{maxWidth: '100px', maxHeight: '75px', minWidth: '100px', minHeight: '75px'}}>Save Workout</Button>
       </div>
 
       {/* // testing by adding props after moving state to App */}
