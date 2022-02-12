@@ -10,9 +10,14 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 
+// import { createTheme } from '@mui/material/styles';
+// import { blueGrey } from '@mui/material/colors';
+
 import { Link } from "react-router-dom";
 
 const pages = ['New Workout', 'All Workouts', 'New Plan'];
+
+
 
 const NavBarTest = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -24,6 +29,8 @@ const NavBarTest = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  
 
   return (
     <AppBar position="static">

@@ -28,13 +28,13 @@
     background: white;
   }
   form button {
-    color: #ff6f47;
+    color: black;
     background: #f7fffe;
     cursor: pointer;
     /* transition: all 0.3s ease; */
   }
   form button:hover {
-    background: #ff6f47;
+    background: black;
     color: white;
   }
   .todo-container {
@@ -79,9 +79,7 @@
     cursor: pointer;
     font-size: 1rem;
   }
-  .complete-btn {
-    background: rgb(11, 212, 162);
-  }
+
   .todo-item {
     padding: 0rem 0.5rem;
   }
