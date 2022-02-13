@@ -6,6 +6,7 @@ import "./App.css";
 import NewWorkoutPage from "./pages/NewWorkout";
 import NewPlanPage from "./pages/NewPlan";
 import AllWorkoutsPage from "./pages/AllWorkouts";
+import TodayWorkoutPage from "./pages/TodayWorkout";
 // import MainNavigation from "./components/layout/MainNavigation";
 import NavBarTest from "./components/layout/NavBarTest";
 
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path="/new-plan" >
           <NewPlanPage />
+        </Route>
+        <Route path="/today" >
+          <TodayWorkoutPage />
         </Route>
       </Switch>
       

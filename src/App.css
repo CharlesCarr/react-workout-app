@@ -187,3 +187,9 @@
   justify-content: center;
 }
 
+.week-days {
+  height: 30÷0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

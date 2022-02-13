@@ -32,7 +32,7 @@ const Input = ({ inputExerciseText, setInputExerciseText, inputSetsRepsText, set
       {/* <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button> */}
-      <Icon color="primary" onClick={submitTodoHandler} fontSize="large" className="submitExercise">add_circle</Icon>
+      <Icon color="primary" onClick={submitTodoHandler} fontSize="large" className="submitExercise" type="submit">add_circle</Icon>
     </form>
   );
 };
