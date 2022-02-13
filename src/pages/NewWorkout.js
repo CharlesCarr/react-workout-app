@@ -77,14 +77,14 @@ function NewWorkoutPage(props) {
       </header>
      
       {/* <Heading /> */}
-      <TableContainer className="workoutTableContainer" component={Paper}  sx={{ minWidth: 750, maxWidth: 750 }}>
-      <Table className="workoutTable" sx={{ minWidth: 750, maxWidth: 750 }} aria-label="simple table">
+      <TableContainer className="workoutTableContainer" component={Paper}  sx={{ maxWidth: 750 }}>
+      <Table className="workoutTable" sx={{ maxWidth: 750 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>EXERCISE</TableCell>
-            <TableCell align="right">SETS x REPS</TableCell>
-            <TableCell align="right">WEIGHT</TableCell>
-            <TableCell align="right">DELETE</TableCell>
+            <TableCell className="table-cell">EXERCISE</TableCell>
+            <TableCell className="table-cell" align="right">SETS x REPS</TableCell>
+            <TableCell className="table-cell" align="right">WEIGHT</TableCell>
+            <TableCell className="table-cell" align="right">DELETE</TableCell>
           </TableRow>
         </TableHead>
 

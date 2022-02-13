@@ -14,10 +14,10 @@ const Todo = ({ exercise, setsreps, weight, todo, todos, setTodos, index }) => {
     <Draggable draggableId={todo.id.toString()} index={index}>
     {(provided) => (
     <TableRow {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-      <TableCell className="todo-item" component="th" scope="row">{exercise}</TableCell>
-      <TableCell className="todo-item" align="right">{setsreps}</TableCell>
-      <TableCell className="todo-item" align="right"> {weight} </TableCell>
-      <TableCell onClick={deleteHandler} className="trash-btn">
+      <TableCell className="table-cell" component="th" scope="row">{exercise}</TableCell>
+      <TableCell className="table-cell" align="right">{setsreps}</TableCell>
+      <TableCell className="table-cell" align="right"> {weight} </TableCell>
+      <TableCell onClick={deleteHandler} className="table-cell" className="trash-btn">
         <i className="fas fa-trash"></i>
       </TableCell>
     </TableRow>

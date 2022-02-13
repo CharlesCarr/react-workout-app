@@ -1,22 +1,11 @@
-import React, { useState } from "react";
-// import Box from "@mui/material/Box";
-// import Modal from "@mui/material/Modal";
-// import Fade from "@mui/material/Fade";
-// import Button from "@mui/material/Button";
-// import Backdrop from "@mui/material/Backdrop";
-// import Typography from "@mui/material/Typography";
-
-// const style = {
-//   position: "absolute",
-//   top: "50%",
-//   left: "50%",
-//   transform: "translate(-50%, -50%)",
-//   width: 400,
-//   bgcolor: "background.paper",
-//   border: "2px solid #000",
-//   boxShadow: 24,
-//   p: 4,
-// };
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import TextField from '@mui/material/TextField';
 
 function CustomModal(props) {
   // Material UI below
@@ -51,16 +40,37 @@ function CustomModal(props) {
     console.log(props.todos);
   };
 
+  const bull = (
+    <Box
+      component="span"
+      sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
+    >
+      •
+    </Box>
+  );
+
+  const card = (
+    <React.Fragment className="modal-container">
+      <CardContent>
+        <Typography variant="h5" component="div">
+        Enter Name for New Workout
+        </Typography>
+
+        <TextField id="filled-basic" label="Workout Name" variant="standard" />
+    
+      </CardContent>
+      <CardActions className="confirm-btn-container">
+        <Button size="small" onClick={saveHandler}>Save Workout</Button>
+        <Button size="small" onClick={props.onClick}>Cancel</Button>
+      </CardActions>
+    </React.Fragment>
+  );
+
   return (
     <div className="modal">
-      <p>Enter Name for New Workout</p>
-      <input></input>
-      <button className="btn" onClick={saveHandler}>
-        Save
-      </button>
-      <button className="btn btn--alt" onClick={props.onClick}>
-        Cancel
-      </button>
+      <Box sx={{ minWidth: 275 }}>
+        <Card variant="outlined">{card}</Card>
+      </Box>
     </div>
   );
 }

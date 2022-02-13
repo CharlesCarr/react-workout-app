@@ -174,11 +174,16 @@
   align-items: center;
 }
 
-.workoutTableContainer {
+.workoutTableContainer, .table-cell {
   border: 2px solid black;
 }
 
 .workoutTable {
   background-color: grey;
+}
+
+.confirm-btn-container {
+  display: flex;
+  justify-content: center;
 }
 
