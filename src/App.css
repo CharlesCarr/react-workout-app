@@ -159,3 +159,26 @@
   border: 1px black solid;
 }
 
+.submitExercise {
+  cursor: pointer;
+  transition: all 300ms ease-in;
+}
+.submitExercise:hover {
+  color: black;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.workoutTableContainer {
+  border: 2px solid black;
+}
+
+.workoutTable {
+  background-color: grey;
+}
+

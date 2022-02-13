@@ -4,12 +4,18 @@ import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 // Importing components
 import Input from '../components/new_workout/Input';
 import TodoList from '../components/TodoList';
-import Modal from '../components/Modal';
+import CustomModal from '../components/Modal';
 import Backdrop from '../components/Backdrop';
 import Heading from "../components/Heading";
 
 // Import Material UI Components
 import Button from '@mui/material/Button';
+import Table from '@mui/material/Table';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import Paper from '@mui/material/Paper';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
 
 
 function NewWorkoutPage(props) {
@@ -65,15 +71,30 @@ function NewWorkoutPage(props) {
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
-    <div className="App">
+    <div className="app">
       <header>
         <h1>WORKOUT BUILDER</h1>
       </header>
      
-      <Heading />
+      {/* <Heading /> */}
+      <TableContainer className="workoutTableContainer" component={Paper}  sx={{ minWidth: 750, maxWidth: 750 }}>
+      <Table className="workoutTable" sx={{ minWidth: 750, maxWidth: 750 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>EXERCISE</TableCell>
+            <TableCell align="right">SETS x REPS</TableCell>
+            <TableCell align="right">WEIGHT</TableCell>
+            <TableCell align="right">DELETE</TableCell>
+          </TableRow>
+        </TableHead>
+
+        <TodoList setTodos={props.setTodos} todos={props.todos} />
+
+        </Table>
+      </TableContainer>
       
       {/* // testing by adding props after moving state to App */}
-      <TodoList setTodos={props.setTodos} todos={props.todos} />
+      
       
       <div className="input-container">
       <Input 
@@ -87,7 +108,7 @@ function NewWorkoutPage(props) {
       </div>
 
       {/* // testing by adding props after moving state to App */}
-      {modalIsOpen && <Modal onClick={closeModalHandler} todos={props.todos} setTodos={props.setTodos} passWorkoutData={passWorkoutData} fullWorkouts={props.fullWorkouts} setFullWorkouts={props.setFullWorkouts}/>}
+      {modalIsOpen && <CustomModal onClick={closeModalHandler} todos={props.todos} setTodos={props.setTodos} passWorkoutData={passWorkoutData} fullWorkouts={props.fullWorkouts} setFullWorkouts={props.setFullWorkouts}/>}
       {modalIsOpen && <Backdrop onClick={closeModalHandler}/>}
       
       

@@ -2,14 +2,15 @@ import React from "react";
 import { Droppable } from 'react-beautiful-dnd';
 import Todo from "./Todo";
 
+import TableBody from '@mui/material/TableBody';
+
 const TodoList = ({ todos, setTodos }) => {
   // console.log(todos);
 
   return (
     <Droppable droppableId="workouts">
     {(provided) => (
-    <div className="todo-container" {...provided.droppableProps} ref={provided.innerRef}>
-      <ul className="todo-list">
+    <TableBody {...provided.droppableProps} ref={provided.innerRef}>
         {todos.map((todo, index) => (
           <Todo
             index={index}
@@ -23,8 +24,7 @@ const TodoList = ({ todos, setTodos }) => {
           />
         ))}
         {provided.placeholder}
-      </ul>
-    </div>
+    </TableBody>
     )}
     </Droppable>
   );

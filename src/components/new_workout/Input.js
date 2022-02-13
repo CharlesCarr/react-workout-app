@@ -3,6 +3,8 @@ import ExerciseForm from './ExerciseForm';
 import SetsRepsForm from './SetsRepsForm';
 import Form from './Form';
 
+import Icon from '@mui/material/Icon';
+
 // Simplified way of adding props is using the {} and passing in what you want - instead of 'props.setInputText' to get access
 const Input = ({ inputExerciseText, setInputExerciseText, inputSetsRepsText, setInputSetsRepsText, inputWeightText, setInputWeightText, setTodos, todos }) => {
   // Writing JS code / functions
@@ -27,9 +29,10 @@ const Input = ({ inputExerciseText, setInputExerciseText, inputSetsRepsText, set
       <SetsRepsForm inputSetsRepsText={inputSetsRepsText} setInputSetsRepsText={setInputSetsRepsText}/>
       <Form inputWeightText={inputWeightText} setInputWeightText={setInputWeightText}/>
       {/* onClick for button calls submitHandler function above */}
-      <button onClick={submitTodoHandler} className="todo-button" type="submit">
+      {/* <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
-      </button>
+      </button> */}
+      <Icon color="primary" onClick={submitTodoHandler} fontSize="large" className="submitExercise">add_circle</Icon>
     </form>
   );
 };

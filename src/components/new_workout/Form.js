@@ -1,4 +1,5 @@
 import React from "react";
+import TextField from '@mui/material/TextField';
 
 // Simplified way of adding props is using the {} and passing in what you want - instead of 'props.setInputText' to get access
 const Form = ({ inputWeightText, setInputWeightText }) => {
@@ -13,7 +14,7 @@ const Form = ({ inputWeightText, setInputWeightText }) => {
   return (
     <div className='input-form'>
       {/* with the onChange, every time the input changes it runs the inputTextHandler function */}
-      <input value={inputWeightText} onChange={inputWeightTextHandler} type="text" className="todo-input" />
+      <TextField value={inputWeightText} onChange={inputWeightTextHandler} type="text" className="todo-input" variant="outlined" label="25 (lb)" />
       {/* onClick for button calls submitHandler function above */}
     </div>
   );

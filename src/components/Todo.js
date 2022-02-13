@@ -1,6 +1,9 @@
 import React from "react";
 import { Draggable } from 'react-beautiful-dnd';
 
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+
 const Todo = ({ exercise, setsreps, weight, todo, todos, setTodos, index }) => {
   const deleteHandler = () => {
     // Goes through the todos array and if the id matches then removes it from the array (b/c each element has to 'pass the test' of not being equal to the id)
@@ -10,14 +13,14 @@ const Todo = ({ exercise, setsreps, weight, todo, todos, setTodos, index }) => {
   return (
     <Draggable draggableId={todo.id.toString()} index={index}>
     {(provided) => (
-    <div className="todo" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-      <li className="todo-item">{exercise}</li>
-      <li className="todo-item">{setsreps}</li>
-      <li className="todo-item"> {weight} </li>
-      <button onClick={deleteHandler} className="trash-btn">
+    <TableRow {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+      <TableCell className="todo-item" component="th" scope="row">{exercise}</TableCell>
+      <TableCell className="todo-item" align="right">{setsreps}</TableCell>
+      <TableCell className="todo-item" align="right"> {weight} </TableCell>
+      <TableCell onClick={deleteHandler} className="trash-btn">
         <i className="fas fa-trash"></i>
-      </button>
-    </div>
+      </TableCell>
+    </TableRow>
     )}
     </Draggable>
   );

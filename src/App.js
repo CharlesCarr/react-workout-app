@@ -6,7 +6,7 @@ import "./App.css";
 import NewWorkoutPage from "./pages/NewWorkout";
 import NewPlanPage from "./pages/NewPlan";
 import AllWorkoutsPage from "./pages/AllWorkouts";
-import MainNavigation from "./components/layout/MainNavigation";
+// import MainNavigation from "./components/layout/MainNavigation";
 import NavBarTest from "./components/layout/NavBarTest";
 
 function App() {
