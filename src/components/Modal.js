@@ -50,7 +50,7 @@ function CustomModal(props) {
   );
 
   const card = (
-    <React.Fragment className="modal-container">
+    <React.Fragment>
       <CardContent>
         <Typography variant="h5" component="div">
         Enter Name for New Workout

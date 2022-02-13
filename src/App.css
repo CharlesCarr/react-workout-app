@@ -167,7 +167,7 @@
   color: black;
 }
 
-.app {
+.app, .all-workouts-container {
   display: flex;
   flex-direction: column;
   justify-content: center;

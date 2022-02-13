@@ -39,10 +39,7 @@ function App() {
         <Route path="/new-plan" >
           <NewPlanPage />
         </Route>
-
       </Switch>
-
-
       
     </div>
   );
