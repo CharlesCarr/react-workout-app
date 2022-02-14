@@ -9,9 +9,14 @@ import WorkoutDropDown from './WorkoutDropDown';
 
 function NewPlanModal(props) {
 
-  const test = () => {
-    // need to display the workout title to the weekday card
+  const selectWorkoutHandler = (props) => {
+    // call a function in here that calls a function in NewPlan
+    props.passSelectData();
 
+  }
+
+  const closeModal = () => {
+    props.setWorkoutModalIsOpen(false);
   }
 
   const card = (
@@ -20,8 +25,8 @@ function NewPlanModal(props) {
         <WorkoutDropDown fullWorkouts={props.fullWorkouts} />
       </CardContent>
       <CardActions className="confirm-btn-container">
-        <Button size="small" onClick={test}>Select Workout</Button>
-        <Button size="small">Cancel</Button>
+        <Button size="small" onClick={selectWorkoutHandler}>Select Workout</Button>
+        <Button size="small" onClick={closeModal}>Cancel</Button>
       </CardActions>
     </React.Fragment>
   );

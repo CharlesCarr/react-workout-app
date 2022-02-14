@@ -8,10 +8,6 @@ import Typography from "@mui/material/Typography";
 import TextField from '@mui/material/TextField';
 
 function CustomModal(props) {
-  // Material UI below
-  // const [open, setOpen] = React.useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
 
   const saveHandler = () => {
     // call a function in here that calls a function in NewWorkout

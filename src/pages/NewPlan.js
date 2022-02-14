@@ -9,16 +9,20 @@ function NewPlanPage(props) {
 
     console.log(props.fullWorkouts);
 
+    const passSelectData = () => {
+        
+    }
+
     return (
         <div>
             <header>
                 <h1>THIS WEEK</h1>
             </header>
             
-            <Week workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen}/>
+            <Week workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen} passSelectData={passSelectData}/>
 
-            {workoutModalIsOpen && <NewPlanModal fullWorkouts={props.fullWorkouts}/>}
-            {workoutModalIsOpen && <Backdrop />}
+            {workoutModalIsOpen && <NewPlanModal fullWorkouts={props.fullWorkouts} workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen}/>}
+            {workoutModalIsOpen && <Backdrop workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen}/>}
         </div>
     )
 }
