@@ -37,8 +37,8 @@ function App() {
         <Route path="/all-workouts" >
           <AllWorkoutsPage todos={todos} fullWorkouts={fullWorkouts}/>
         </Route>
-        <Route path="/new-plan" >
-          <NewPlanPage />
+        <Route path="/new-plan">
+          <NewPlanPage fullWorkouts={fullWorkouts}/>
         </Route>
         <Route path="/today" >
           <TodayWorkoutPage />

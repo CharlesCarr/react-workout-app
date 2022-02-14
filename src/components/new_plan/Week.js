@@ -1,13 +1,13 @@
-import Card from '@mui/material/Card';
+import WeekDay from './WeekDay';
 
-function Week() {
+function Week(props) {
 
     const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     return (
         <div className="week-days">
             {weekDays.map((day) => {
-                return <Card sx={{ minWidth: 175, maxWidth: 175, minHeight: 175, maxHeight: 175 }} day={day}>{day}</Card>;
+                return <WeekDay day={day} key={day} workoutModalIsOpen={props.workoutModalIsOpen} setWorkoutModalIsOpen={props.setWorkoutModalIsOpen}></WeekDay>;
             })}
             
         </div>
