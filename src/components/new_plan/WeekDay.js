@@ -1,14 +1,26 @@
+import React, { useState } from 'react';
 import Card from "@mui/material/Card";
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import DisplayWorkout from './DisplayWorkout';
+
 function WeekDay(props) {
+
+  const [daySelected, setDaySelected] = useState(false);
 
   const selectWorkoutHandler = () => {
     props.setWorkoutModalIsOpen(true);
+
+    // here will also need to save something to signal that a specific day has been selected and save that (useState?)
+    setDaySelected(true);
   }
+
+  console.log(props.showSelectedWorkout);
+
+  const test = props.showSelectedWorkout;
 
   return (
     <Card
@@ -19,6 +31,8 @@ function WeekDay(props) {
         <Typography sx={{ fontSize: 14 }} color="text.secondary">
           {props.day}
         </Typography>
+
+        {test && <DisplayWorkout showSelectedWorkout={props.showSelectedWorkout} setShowSelectedWorkout={props.setShowSelectedWorkout}/>}
       </CardContent>
 
       <CardActions>

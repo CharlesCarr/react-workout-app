@@ -1,4 +1,5 @@
-import * as React from "react";
+
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -9,20 +10,28 @@ import WorkoutDropDown from './WorkoutDropDown';
 
 function NewPlanModal(props) {
 
-  const selectWorkoutHandler = (props) => {
-    // call a function in here that calls a function in NewPlan
-    props.passSelectData();
-
-  }
+  // const [workoutDropDown, setWorkoutDropDown] = useState("");
+  // console.log(workoutDropDown);
 
   const closeModal = () => {
     props.setWorkoutModalIsOpen(false);
   }
 
+  const selectWorkoutHandler = () => {
+    // sets state in new plan as true to show workout then will pass down to WeekDay to test and display
+    props.setShowSelectedWorkout(true);
+
+    // close
+    props.setWorkoutModalIsOpen(false);
+
+  }
+
+  
+
   const card = (
     <React.Fragment>
       <CardContent>
-        <WorkoutDropDown fullWorkouts={props.fullWorkouts} />
+        <WorkoutDropDown fullWorkouts={props.fullWorkouts} workoutDropDown={props.workoutDropDown} setWorkoutDropDown={props.setWorkoutDropDown} />
       </CardContent>
       <CardActions className="confirm-btn-container">
         <Button size="small" onClick={selectWorkoutHandler}>Select Workout</Button>

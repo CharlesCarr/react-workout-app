@@ -7,6 +7,12 @@ function NewPlanPage(props) {
 
     const [workoutModalIsOpen, setWorkoutModalIsOpen] = useState(false);
 
+    const [workoutDropDown, setWorkoutDropDown] = useState("");
+    console.log(workoutDropDown);
+
+
+    const [showSelectedWorkout, setShowSelectedWorkout] = useState(false);
+
     console.log(props.fullWorkouts);
 
     const passSelectData = () => {
@@ -19,9 +25,9 @@ function NewPlanPage(props) {
                 <h1>THIS WEEK</h1>
             </header>
             
-            <Week workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen} passSelectData={passSelectData}/>
+            <Week showSelectedWorkout={showSelectedWorkout} setShowSelectedWorkout={setShowSelectedWorkout} workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen} passSelectData={passSelectData} workoutDropDown={workoutDropDown} setWorkoutDropDown={setWorkoutDropDown}/>
 
-            {workoutModalIsOpen && <NewPlanModal fullWorkouts={props.fullWorkouts} workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen}/>}
+            {workoutModalIsOpen && <NewPlanModal showSelectedWorkout={showSelectedWorkout} setShowSelectedWorkout={setShowSelectedWorkout} workoutDropDown={workoutDropDown} setWorkoutDropDown={setWorkoutDropDown} fullWorkouts={props.fullWorkouts} workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen}/>}
             {workoutModalIsOpen && <Backdrop workoutModalIsOpen={workoutModalIsOpen} setWorkoutModalIsOpen={setWorkoutModalIsOpen}/>}
         </div>
     )
