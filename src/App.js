@@ -6,7 +6,6 @@ import "./App.css";
 import NewWorkoutPage from "./pages/NewWorkout";
 import AllWorkoutsPage from "./pages/AllWorkouts";
 import TodayWorkoutPage from "./pages/TodayWorkout";
-// import MainNavigation from "./components/layout/MainNavigation";
 import NavBarTest from "./components/layout/NavBarTest";
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
           <AllWorkoutsPage todos={todos} fullWorkouts={fullWorkouts}/>
         </Route>
         <Route path="/today" >
-          <TodayWorkoutPage />
+          <TodayWorkoutPage todos={todos} fullWorkouts={fullWorkouts}/>
         </Route>
       </Switch>
       
