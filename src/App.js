@@ -4,7 +4,6 @@ import "./App.css";
 
 // Importing components
 import NewWorkoutPage from "./pages/NewWorkout";
-import NewPlanPage from "./pages/NewPlan";
 import AllWorkoutsPage from "./pages/AllWorkouts";
 import TodayWorkoutPage from "./pages/TodayWorkout";
 // import MainNavigation from "./components/layout/MainNavigation";
@@ -36,9 +35,6 @@ function App() {
         </Route>
         <Route path="/all-workouts" >
           <AllWorkoutsPage todos={todos} fullWorkouts={fullWorkouts}/>
-        </Route>
-        <Route path="/new-plan">
-          <NewPlanPage fullWorkouts={fullWorkouts}/>
         </Route>
         <Route path="/today" >
           <TodayWorkoutPage />

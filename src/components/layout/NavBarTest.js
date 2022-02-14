@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 import { Link } from "react-router-dom";
 
-const pages = ['New Workout', 'All Workouts', 'New Plan'];
+const pages = ['New Workout', 'All Workouts'];
 
 
 
@@ -65,7 +65,6 @@ const NavBarTest = () => {
 
             <Link to="/"><Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>New Workout</Button></Link>
             <Link to="/all-workouts"><Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>All Workouts</Button></Link>
-            <Link to="/new-plan"><Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>New Plan</Button></Link>
             <Link to="/today"><Button onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>Today</Button></Link>
 
             
@@ -108,7 +107,6 @@ const NavBarTest = () => {
 
             <Link to="/"><MenuItem onClick={handleCloseNavMenu}><Typography textAlign="center">New Workout</Typography></MenuItem></Link>
             <Link to="/all-workouts"><MenuItem onClick={handleCloseNavMenu}><Typography textAlign="center">All Workouts</Typography></MenuItem></Link>
-            <Link to="/new-plan"><MenuItem onClick={handleCloseNavMenu}><Typography textAlign="center">New Plan</Typography></MenuItem></Link>
             <Link to="/today"><MenuItem onClick={handleCloseNavMenu}><Typography textAlign="center">Today</Typography></MenuItem></Link>
             
             </Menu>
