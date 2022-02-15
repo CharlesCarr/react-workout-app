@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -6,12 +5,8 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 function TodayDropDown(props) {
-  const [workoutDropDown, setWorkoutDropDown] = useState("");
-  
-
   const handleChange = (event) => {
-    setWorkoutDropDown(event.target.value);
-    console.log(workoutDropDown);
+    props.setWorkoutDropDown(event.target.value);
   };
 
   return (
@@ -21,7 +16,7 @@ function TodayDropDown(props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={workoutDropDown}
+          value={props.workoutDropDown}
           label="Workout Title"
           onChange={handleChange}
         >
