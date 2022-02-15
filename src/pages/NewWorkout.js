@@ -108,7 +108,7 @@ function NewWorkoutPage(props) {
       </div>
 
       {/* // testing by adding props after moving state to App */}
-      {modalIsOpen && <CustomModal onClick={closeModalHandler} todos={props.todos} setTodos={props.setTodos} passWorkoutData={passWorkoutData} fullWorkouts={props.fullWorkouts} setFullWorkouts={props.setFullWorkouts}/>}
+      {modalIsOpen && <CustomModal inputTitle={props.inputTitle} setInputTitle={props.setInputTitle} onClick={closeModalHandler} todos={props.todos} setTodos={props.setTodos} passWorkoutData={passWorkoutData} fullWorkouts={props.fullWorkouts} setFullWorkouts={props.setFullWorkouts}/>}
       {modalIsOpen && <Backdrop onClick={closeModalHandler}/>}
       
       

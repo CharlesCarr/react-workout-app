@@ -15,6 +15,7 @@ function TodayWorkoutPage(props) {
         fullWorkouts={props.fullWorkouts}
         workoutDropDown={workoutDropDown}
         setWorkoutDropDown={setWorkoutDropDown}
+        inputTitle={props.inputTitle} setInputTitle={props.setInputTitle}
       />
     </div>
   );

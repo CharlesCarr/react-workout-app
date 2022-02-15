@@ -35,9 +35,11 @@ function DisplayTodayWorkout(props) {
         return (
           <SelectedWorkout
             key={exercise.id}
+            title={exercise.title}
             exercise={exercise.exercise}
             setsreps={exercise.setsreps}
             weight={exercise.weight}
+            inputTitle={props.inputTitle} setInputTitle={props.setInputTitle}
           ></SelectedWorkout>
         );
       })

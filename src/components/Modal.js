@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from 'react';
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -9,12 +9,22 @@ import TextField from '@mui/material/TextField';
 
 function CustomModal(props) {
 
+  // const [inputTitle, setInputTitle] = useState("");
+
+  const handleChange = (event) => {
+    props.setInputTitle(event.target.value);
+  };
+
   const saveHandler = () => {
     // call a function in here that calls a function in NewWorkout
     props.passWorkoutData(props.todos);
 
     // then will close the modal
     props.onClick();
+
+    // grab the value of the title user inputs and set as title value
+    // setInputTitle("test");
+    // console.log(inputTitle);
 
     // also want to clear out the workout builder
     // think will also need to have an array of all the workouts somewhere
@@ -23,7 +33,7 @@ function CustomModal(props) {
       // { id: Math.random() * 1000, exercise: inputExerciseText, setsreps: inputSetsRepsText, weight: inputWeightText },
       {
         id: Math.random(),
-        title: "Workout Title",
+        title: props.inputTitle,
         testFullWorkouts: [props.todos],
       },
     ]);
@@ -41,7 +51,6 @@ function CustomModal(props) {
       component="span"
       sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
     >
-      •
     </Box>
   );
 
@@ -52,7 +61,7 @@ function CustomModal(props) {
         Enter Name for New Workout
         </Typography>
 
-        <TextField id="filled-basic" label="Workout Name" variant="standard" />
+        <TextField id="filled-basic" label="Workout Name" variant="standard" onChange={handleChange}/>
     
       </CardContent>
       <CardActions className="confirm-btn-container">

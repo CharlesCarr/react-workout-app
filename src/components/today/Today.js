@@ -32,6 +32,7 @@ function Today(props) {
           fullWorkouts={props.fullWorkouts}
           workoutDropDown={props.workoutDropDown}
           setWorkoutDropDown={props.setWorkoutDropDown}
+          inputTitle={props.inputTitle} setInputTitle={props.setInputTitle}
         />
       </CardContent>
       <CardActions className="confirm-btn-container">
@@ -46,7 +47,7 @@ function Today(props) {
     <div className="today-container">
       <Box sx={{ minWidth: 300, maxWidth: 300 }}>
         {!workoutSelected && <Card variant="outlined">{card}</Card>}
-        {workoutSelected && <DisplayTodayWorkout fullWorkouts={props.fullWorkouts} workoutDropDown={props.workoutDropDown} />}
+        {workoutSelected && <DisplayTodayWorkout inputTitle={props.inputTitle} setInputTitle={props.setInputTitle} fullWorkouts={props.fullWorkouts} workoutDropDown={props.workoutDropDown} />}
       </Box>
     </div>
   );

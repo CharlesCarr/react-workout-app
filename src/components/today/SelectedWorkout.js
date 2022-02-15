@@ -8,6 +8,9 @@ import Paper from '@mui/material/Paper';
 
 function SelectedWorkout(props) {
   return (
+    <div className="todo-container flextest">
+    <h2>{props.title}</h2>
+
     <TableContainer
       className="workoutTableContainer"
       component={Paper}
@@ -48,6 +51,7 @@ function SelectedWorkout(props) {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
   );
 }
 export default SelectedWorkout;

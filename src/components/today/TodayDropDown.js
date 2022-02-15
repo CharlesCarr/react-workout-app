@@ -24,7 +24,7 @@ function TodayDropDown(props) {
             console.log("Workout ID:" + workout.id);
             return (
               <MenuItem workout={workout} key={workout.id} value={workout.id}>
-                {workout.id}
+                {workout.title}
               </MenuItem>
             );
           })}

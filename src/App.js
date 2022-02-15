@@ -13,6 +13,10 @@ function App() {
    // state for Todos - going to be an array b/c will have an array of objects in this
    const [todos, setTodos] = useState([]);
 
+  //  state for Workout title
+  const [inputTitle, setInputTitle] = useState("");
+  console.log(inputTitle);
+
   //  state for fullWorkouts - going to be an array (will have the todos array inside for each individual workout)
   const [fullWorkouts, setFullWorkouts] = useState([]);
   console.log(fullWorkouts);
@@ -30,13 +34,13 @@ function App() {
 
       <Switch>
         <Route path="/" exact >
-          <NewWorkoutPage addWorkoutData={getWorkoutData} todos={todos} setTodos={setTodos} fullWorkouts={fullWorkouts} setFullWorkouts={setFullWorkouts}/>
+          <NewWorkoutPage inputTitle={inputTitle} setInputTitle={setInputTitle} addWorkoutData={getWorkoutData} todos={todos} setTodos={setTodos} fullWorkouts={fullWorkouts} setFullWorkouts={setFullWorkouts}/>
         </Route>
         <Route path="/all-workouts" >
           <AllWorkoutsPage todos={todos} fullWorkouts={fullWorkouts}/>
         </Route>
         <Route path="/today" >
-          <TodayWorkoutPage todos={todos} fullWorkouts={fullWorkouts}/>
+          <TodayWorkoutPage inputTitle={inputTitle} setInputTitle={setInputTitle} todos={todos} fullWorkouts={fullWorkouts}/>
         </Route>
       </Switch>
       
