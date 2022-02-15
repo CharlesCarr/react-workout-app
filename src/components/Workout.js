@@ -11,12 +11,11 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 
 function Workout(props) {
-  // console.log(props.fullWorkout);
 
-  // const workoutFull = props.fullWorkout;
+  // className="todo-container flextest"
 
   return (
-    <div className="todo-container flextest">
+    <div className="ind-workout-container" >
       {/* Title of Workout */}
       <h2>{props.test.title}</h2>
 

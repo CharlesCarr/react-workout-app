@@ -15,9 +15,6 @@ function CompletedWorkout(props) {
         <TableCell className="table-cell" component="th" scope="row">
           {props.ind.weight}
         </TableCell>
-        {/* <li className="todo-item">{props.ind.exercise}</li>
-            <li className="todo-item">{props.ind.setsreps}</li>
-            <li className="todo-item">{props.ind.weight}</li> */}
       </TableRow>
     </TableBody>
   );
