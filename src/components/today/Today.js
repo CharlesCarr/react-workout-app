@@ -5,6 +5,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { ThemeProvider } from "@mui/material/styles";
 
 import TodayDropDown from "./TodayDropDown";
 import DisplayTodayWorkout from "./DisplayTodayWorkout";
@@ -24,8 +25,9 @@ function Today(props) {
 
   const card = (
     <React.Fragment>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary">
+      <ThemeProvider theme={props.colorTheme}>
+      <CardContent className="selectday">
+        <Typography className="selecttext" sx={{ fontSize: 14 }}>
           Select Your Workout For Today
         </Typography>
 
@@ -37,16 +39,18 @@ function Today(props) {
         />
       </CardContent>
       <CardActions className="confirm-btn-container">
-        <Button size="small" onClick={selectWorkoutHandler}>
+        <Button size="small" onClick={selectWorkoutHandler} variant="contained">
           Select Workout
         </Button>
       </CardActions>
+      </ThemeProvider>
     </React.Fragment>
   );
 
   return (
     <div className="today-container">
-      <Box sx={{ width: 1}} className="box">
+      {/* sx={{ width: 1}} */}
+      <Box  className="box" >
         {!workoutSelected && <Card variant="outlined">{card}</Card>}
         {workoutSelected && <FullTodayWorkout inputTitle={props.inputTitle} setInputTitle={props.setInputTitle} fullWorkouts={props.fullWorkouts} workoutDropDown={props.workoutDropDown} />}
       </Box>

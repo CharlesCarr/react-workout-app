@@ -82,11 +82,12 @@ function NewWorkoutPage(props) {
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <div className="app">
         <ThemeProvider theme={theme}>
-          <Typography variant="h2" gutterBottom>
+          <Typography className="pagetitle" variant="h2" gutterBottom>
             {header}
           </Typography>
         </ThemeProvider>
 
+      <ThemeProvider theme={props.colorTheme}>
         <TableContainer
           className="workoutTableContainer"
           component={Paper}
@@ -94,10 +95,11 @@ function NewWorkoutPage(props) {
         >
           <Table
             className="workoutTable"
+            // color="secondary"
             // sx={{ maxWidth: 750 }}
             // aria-label="simple table"
           >
-            <TableHead>
+            <TableHead className="new-wkt-header">
               <TableRow>
                 <TableCell className="table-cell" align="center">
                   EXERCISE
@@ -117,6 +119,7 @@ function NewWorkoutPage(props) {
             <TodoList setTodos={props.setTodos} todos={props.todos} />
           </Table>
         </TableContainer>
+        </ThemeProvider>
 
         {/* // testing by adding props after moving state to App */}
 
@@ -131,7 +134,9 @@ function NewWorkoutPage(props) {
             // // testing by adding props after moving state to App
             todos={props.todos}
             setTodos={props.setTodos}
+            theme={props.colorTheme}
           />
+          <ThemeProvider theme={props.colorTheme}>
           <Button
             onClick={saveWorkoutHandler}
             className="save-wkt-btn"
@@ -146,6 +151,7 @@ function NewWorkoutPage(props) {
           >
             Save Workout
           </Button>
+          </ThemeProvider>
         </div>
 
         {/* // testing by adding props after moving state to App */}
@@ -159,6 +165,7 @@ function NewWorkoutPage(props) {
             passWorkoutData={passWorkoutData}
             fullWorkouts={props.fullWorkouts}
             setFullWorkouts={props.setFullWorkouts}
+            theme={props.colorTheme}
           />
         )}
         {modalIsOpen && <Backdrop onClick={closeModalHandler} />}

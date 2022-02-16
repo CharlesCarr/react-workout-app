@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextField from '@mui/material/TextField';
+import { ThemeProvider } from "@mui/material/styles";
 
 function CustomModal(props) {
 
@@ -56,7 +57,8 @@ function CustomModal(props) {
 
   const card = (
     <React.Fragment>
-      <CardContent>
+      <ThemeProvider theme={props.theme}>
+      <CardContent className="fullmodal">
         <Typography variant="h5" component="div">
         Enter Name for New Workout
         </Typography>
@@ -65,15 +67,16 @@ function CustomModal(props) {
     
       </CardContent>
       <CardActions className="confirm-btn-container">
-        <Button size="small" onClick={saveHandler}>Save Workout</Button>
-        <Button size="small" onClick={props.onClick}>Cancel</Button>
+        <Button size="small" onClick={saveHandler} variant="contained">Save Workout</Button>
+        <Button size="small" onClick={props.onClick} variant="contained">Cancel</Button>
       </CardActions>
+      </ThemeProvider>
     </React.Fragment>
   );
 
   return (
     <div className="modal">
-      <Box sx={{ minWidth: 275 }}>
+      <Box sx={{ minWidth: 275 }} >
         <Card variant="outlined">{card}</Card>
       </Box>
     </div>

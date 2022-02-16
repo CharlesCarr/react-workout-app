@@ -2,11 +2,12 @@ import React from "react";
 import ExerciseForm from './ExerciseForm';
 import SetsRepsForm from './SetsRepsForm';
 import Form from './Form';
+import { ThemeProvider } from "@mui/material/styles";
 
 import Icon from '@mui/material/Icon';
 
 // Simplified way of adding props is using the {} and passing in what you want - instead of 'props.setInputText' to get access
-const Input = ({ inputExerciseText, setInputExerciseText, inputSetsRepsText, setInputSetsRepsText, inputWeightText, setInputWeightText, setTodos, todos }) => {
+const Input = ({ inputExerciseText, setInputExerciseText, inputSetsRepsText, setInputSetsRepsText, inputWeightText, setInputWeightText, setTodos, todos, theme }) => {
   // Writing JS code / functions
 
   const submitTodoHandler = (e) => {
@@ -25,14 +26,16 @@ const Input = ({ inputExerciseText, setInputExerciseText, inputSetsRepsText, set
 
   return (
     <form className='input-form'>
-      <ExerciseForm inputExerciseText={inputExerciseText} setInputExerciseText={setInputExerciseText}/>
-      <SetsRepsForm inputSetsRepsText={inputSetsRepsText} setInputSetsRepsText={setInputSetsRepsText}/>
-      <Form inputWeightText={inputWeightText} setInputWeightText={setInputWeightText}/>
+      <ExerciseForm inputExerciseText={inputExerciseText} setInputExerciseText={setInputExerciseText} theme={theme}/>
+      <SetsRepsForm inputSetsRepsText={inputSetsRepsText} setInputSetsRepsText={setInputSetsRepsText} theme={theme}/>
+      <Form inputWeightText={inputWeightText} setInputWeightText={setInputWeightText} theme={theme}/>
       {/* onClick for button calls submitHandler function above */}
       {/* <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button> */}
+      <ThemeProvider theme={theme}>
       <Icon color="primary" onClick={submitTodoHandler} fontSize="large" className="submitExercise" type="submit">add_circle</Icon>
+      </ThemeProvider>
     </form>
   );
 };

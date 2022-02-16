@@ -19,7 +19,7 @@ function TodayWorkoutPage(props) {
   return (
     <div className="app">
       <ThemeProvider theme={theme}>
-        <Typography variant="h2" gutterBottom>
+        <Typography className="pagetitle" variant="h2" gutterBottom>
           {header}
         </Typography>
       </ThemeProvider>
@@ -30,6 +30,7 @@ function TodayWorkoutPage(props) {
         setWorkoutDropDown={setWorkoutDropDown}
         inputTitle={props.inputTitle}
         setInputTitle={props.setInputTitle}
+        colorTheme={props.colorTheme}
       />
     </div>
   );

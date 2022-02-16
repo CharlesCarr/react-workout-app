@@ -24,19 +24,18 @@ const NavBarTest = (props) => {
     setAnchorElNav(null);
   };
 
-  const darkPrimary = props.theme.palette.primary.dark;
-  console.log(darkPrimary);
-
   return (
-    <ThemeProvider theme={props.theme}>
-    <AppBar position="static" >
+    <ThemeProvider theme={props.colorTheme}>
+    <AppBar position="static" className={classes.appbar} color="primary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
             component="div"
+            className={classes.navtext}
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+            color="error"
           >
             WORKOUT APP
           </Typography>
@@ -46,6 +45,7 @@ const NavBarTest = (props) => {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            className={classes.navtext}
           >
             WORKOUT APP
           </Typography>
@@ -55,6 +55,7 @@ const NavBarTest = (props) => {
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
+                className={classes.navtext}
               >
                 New Workout
               </Button>
@@ -63,6 +64,7 @@ const NavBarTest = (props) => {
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
+                className={classes.navtext}
               >
                 All Workouts
               </Button>
@@ -71,6 +73,7 @@ const NavBarTest = (props) => {
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
+                className={classes.navtext}
               >
                 Today
               </Button>
@@ -84,7 +87,8 @@ const NavBarTest = (props) => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              className={classes.navtext}
+              color="error"
             >
               <MenuIcon />
             </IconButton>
@@ -105,21 +109,22 @@ const NavBarTest = (props) => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
+              className={classes.hammenu}
             >
 
               <Link className={classes.test} to="/">
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">NEW WORKOUT</Typography>
+                  <Typography textAlign="center" className={classes.navtextham} color="primary">NEW WORKOUT</Typography>
                 </MenuItem>
               </Link>
               <Link className={classes.test} to="/all-workouts">
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">ALL WORKOUTS</Typography>
+                  <Typography textAlign="center" className={classes.navtextham} color="primary">ALL WORKOUTS</Typography>
                 </MenuItem>
               </Link>
               <Link className={classes.test} to="/today">
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">TODAY</Typography>
+                  <Typography textAlign="center" className={classes.navtextham} color="primary">TODAY</Typography>
                 </MenuItem>
               </Link>
             </Menu>

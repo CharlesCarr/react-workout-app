@@ -13,11 +13,11 @@ import TableCell from "@mui/material/TableCell";
 function Workout(props) {
   return (
     <div className="all-workout-container">
-      <h2 className="workout-title">{props.test.title}</h2>
+      <h3 className="workout-title">{props.test.title}</h3>
 
       <TableContainer className="workoutTableContainer" component={Paper}>
         <Table className="workoutTable">
-          <TableHead>
+          <TableHead className="new-wkt-header">
             <TableRow>
               <TableCell className="table-cell head-cell" align="center">
                 EXERCISE

@@ -21,7 +21,7 @@ function AllWorkoutsPage(props) {
   return (
     <div className="app">
       <ThemeProvider theme={theme}>
-        <Typography variant="h2" gutterBottom>
+        <Typography className="pagetitle" variant="h2" gutterBottom>
           {header}
         </Typography>
       </ThemeProvider>
