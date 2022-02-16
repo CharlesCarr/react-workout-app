@@ -11,8 +11,9 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import classes from "./NavBarTest.module.css";
+import { ThemeProvider } from '@mui/material/styles';
 
-const NavBarTest = () => {
+const NavBarTest = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -23,8 +24,12 @@ const NavBarTest = () => {
     setAnchorElNav(null);
   };
 
+  const darkPrimary = props.theme.palette.primary.dark;
+  console.log(darkPrimary);
+
   return (
-    <AppBar position="static">
+    <ThemeProvider theme={props.theme}>
+    <AppBar position="static" >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -122,6 +127,7 @@ const NavBarTest = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    </ThemeProvider>
   );
 };
 

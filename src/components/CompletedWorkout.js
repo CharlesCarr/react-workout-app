@@ -5,14 +5,14 @@ import TableCell from '@mui/material/TableCell';
 function CompletedWorkout(props) {
   return (
     <TableBody>
-      <TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-        <TableCell className="table-cell" component="th" scope="row">
+      <TableRow  className="table-cell">
+        <TableCell  className="table-cell" component="th" scope="row" align="center" >
           {props.ind.exercise}
         </TableCell>
-        <TableCell className="table-cell" component="th" scope="row">
+        <TableCell className="table-cell" component="th" scope="row" align="center">
           {props.ind.setsreps}
         </TableCell>
-        <TableCell className="table-cell" component="th" scope="row">
+        <TableCell className="table-cell" component="th" scope="row" align="center">
           {props.ind.weight}
         </TableCell>
       </TableRow>

@@ -167,14 +167,10 @@
   color: black;
 }
 
-
-
-.workoutTableContainer, .table-cell {
-  border: 2px solid black;
-}
-
 .workoutTable {
   background-color: grey;
+  width: 100%;
+  display: flex;
 }
 
 .confirm-btn-container {
@@ -193,6 +189,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .ind-workout-container {
@@ -201,9 +198,78 @@
   width: 75%;
 }
 
-.app, .all-workouts-container {
+.app {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 3.5%;
+}
+
+.all-workout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.5%;
+  width: 75%;
+  background-color: #242526;
+  box-shadow: 1px 2px 3px #242526;
+  padding: 2% 3%;
+  border-radius: 5px;
+}
+
+.workout-title {
+  margin-bottom: 3%;
+  margin-top: 1%;
+  color: white;
+  border: 1px solid #888888;
+  padding: 1.5%;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px #888888;
+}
+
+ .table-cell {
+  border: 2px solid black;
+}
+
+.head-cell {
+  background-color: white;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin-top: 3%;
+}
+
+.workoutTableContainer {
+  border: 2px solid black;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .all-workout-container {
+    width: 95%;
+  }
+  .input-container {
+    flex-direction: column;
+    margin-top: 3%;
+  }
+  .input-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .submitExercise {
+    align-self: flex-end;
+    margin-top: 2%;
+  }
 }

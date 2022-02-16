@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 
 import TodayDropDown from "./TodayDropDown";
 import DisplayTodayWorkout from "./DisplayTodayWorkout";
+import FullTodayWorkout from './FullTodayWorkout';
 
 function Today(props) {
   const [workoutSelected, setWorkoutSelected] = useState(false);
@@ -45,9 +46,9 @@ function Today(props) {
 
   return (
     <div className="today-container">
-      <Box sx={{ minWidth: 300, maxWidth: 300 }}>
+      <Box sx={{ width: 1}} className="box">
         {!workoutSelected && <Card variant="outlined">{card}</Card>}
-        {workoutSelected && <DisplayTodayWorkout inputTitle={props.inputTitle} setInputTitle={props.setInputTitle} fullWorkouts={props.fullWorkouts} workoutDropDown={props.workoutDropDown} />}
+        {workoutSelected && <FullTodayWorkout inputTitle={props.inputTitle} setInputTitle={props.setInputTitle} fullWorkouts={props.fullWorkouts} workoutDropDown={props.workoutDropDown} />}
       </Box>
     </div>
   );
