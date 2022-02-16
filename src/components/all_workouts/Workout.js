@@ -1,8 +1,6 @@
-import CompletedWorkout from "../components/CompletedWorkout";
-import Heading from "./Heading";
+import CompletedWorkout from "./CompletedWorkout";
 
 // Import Material UI Components
-import Button from "@mui/material/Button";
 import Table from "@mui/material/Table";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
@@ -32,11 +30,7 @@ function Workout(props) {
           </TableHead>
 
           {props.test.testFullWorkouts.map((individual) => {
-            console.log(individual);
-
             return individual.map((ind) => {
-              console.log(ind);
-              console.log(ind.id);
               return <CompletedWorkout ind={ind} key={ind.id} />;
             });
           })}

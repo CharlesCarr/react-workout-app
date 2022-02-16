@@ -9,15 +9,12 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import TodayDropDown from "./TodayDropDown";
 import DisplayTodayWorkout from "./DisplayTodayWorkout";
-import FullTodayWorkout from './FullTodayWorkout';
+import FullTodayWorkout from "./FullTodayWorkout";
 
 function Today(props) {
   const [workoutSelected, setWorkoutSelected] = useState(false);
 
-  // console.log(props.workoutDropDown);
-
   const selectWorkoutHandler = () => {
-    console.log(props.fullWorkouts);
     // get the workout that matches the id / title of the workout selected in the drop down
     // change the state so that workout selected is true and then instead display a component for the workout selected
     setWorkoutSelected(true);
@@ -26,33 +23,44 @@ function Today(props) {
   const card = (
     <React.Fragment>
       <ThemeProvider theme={props.colorTheme}>
-      <CardContent className="selectday">
-        <Typography className="selecttext" sx={{ fontSize: 14 }}>
-          Select Your Workout For Today
-        </Typography>
+        <CardContent className="selectday">
+          <Typography className="selecttext" sx={{ fontSize: 14 }}>
+            Select Your Workout For Today
+          </Typography>
 
-        <TodayDropDown
-          fullWorkouts={props.fullWorkouts}
-          workoutDropDown={props.workoutDropDown}
-          setWorkoutDropDown={props.setWorkoutDropDown}
-          inputTitle={props.inputTitle} setInputTitle={props.setInputTitle}
-        />
-      </CardContent>
-      <CardActions className="confirm-btn-container">
-        <Button size="small" onClick={selectWorkoutHandler} variant="contained">
-          Select Workout
-        </Button>
-      </CardActions>
+          <TodayDropDown
+            fullWorkouts={props.fullWorkouts}
+            workoutDropDown={props.workoutDropDown}
+            setWorkoutDropDown={props.setWorkoutDropDown}
+            inputTitle={props.inputTitle}
+            setInputTitle={props.setInputTitle}
+          />
+        </CardContent>
+        <CardActions className="confirm-btn-container">
+          <Button
+            size="small"
+            onClick={selectWorkoutHandler}
+            variant="contained"
+          >
+            Select Workout
+          </Button>
+        </CardActions>
       </ThemeProvider>
     </React.Fragment>
   );
 
   return (
     <div className="today-container">
-      {/* sx={{ width: 1}} */}
-      <Box  className="box" >
+      <Box className="box">
         {!workoutSelected && <Card variant="outlined">{card}</Card>}
-        {workoutSelected && <FullTodayWorkout inputTitle={props.inputTitle} setInputTitle={props.setInputTitle} fullWorkouts={props.fullWorkouts} workoutDropDown={props.workoutDropDown} />}
+        {workoutSelected && (
+          <FullTodayWorkout
+            inputTitle={props.inputTitle}
+            setInputTitle={props.setInputTitle}
+            fullWorkouts={props.fullWorkouts}
+            workoutDropDown={props.workoutDropDown}
+          />
+        )}
       </Box>
     </div>
   );

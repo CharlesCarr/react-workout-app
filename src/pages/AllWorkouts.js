@@ -1,4 +1,4 @@
-import Workout from "../components/Workout";
+import Workout from "../components/all_workouts/Workout";
 import {
   ThemeProvider,
   createTheme,
@@ -7,11 +7,8 @@ import {
 import Typography from "@mui/material/Typography";
 
 function AllWorkoutsPage(props) {
-  console.log(props.fullWorkouts);
-
   const noWorkouts = "(No Saved Workouts to Display)";
   const testTrue = props.fullWorkouts.length === 0;
-  console.log(testTrue);
 
   // Adding responsive font sizing from material ui
   let theme = createTheme();

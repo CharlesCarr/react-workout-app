@@ -21,7 +21,6 @@ function TodayDropDown(props) {
           onChange={handleChange}
         >
           {props.fullWorkouts.map((workout) => {
-            console.log("Workout ID:" + workout.id);
             return (
               <MenuItem workout={workout} key={workout.id} value={workout.id}>
                 {workout.title}

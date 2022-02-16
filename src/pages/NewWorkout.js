@@ -3,10 +3,9 @@ import { DragDropContext, DropResult } from "react-beautiful-dnd";
 
 // Importing components
 import Input from "../components/new_workout/Input";
-import TodoList from "../components/TodoList";
-import CustomModal from "../components/Modal";
-import Backdrop from "../components/Backdrop";
-import Heading from "../components/Heading";
+import TodoList from "../components/new_workout/TodoList";
+import CustomModal from "../components/new_workout/Modal";
+import Backdrop from "../components/layout/Backdrop";
 
 // Import Material UI Components
 import Button from "@mui/material/Button";
@@ -32,15 +31,10 @@ function NewWorkoutPage(props) {
   // Lastly want to get the state for the weight form - the last input field
   const [inputWeightText, setInputWeightText] = useState("");
 
-  // state for Todos - going to be an array b/c will have an array of objects in this
-  // const [todos, setTodos] = useState([]);
-  //   console.log(todos);
-
   //   state for Modal - opening and closing, set to closed at first
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleOnDragEnd = (result) => {
-    // console.log(result);
     if (!result.destination) return;
 
     // testing by adding props after moving state to App
@@ -55,9 +49,6 @@ function NewWorkoutPage(props) {
   const saveWorkoutHandler = () => {
     // modal/overlay to appear to confirm saving and be able to name the saved workout (can look back at course to do this easily)
     setModalIsOpen(true);
-    // think below will be a separate function
-    // get all the different exercises into one object
-    // then display this object as a workout in 'All Workouts'
   };
 
   const closeModalHandler = () => {
@@ -68,7 +59,6 @@ function NewWorkoutPage(props) {
   const passWorkoutData = (todos) => {
     const workoutData = {
       ...todos,
-      // test: 'test'
     };
     props.addWorkoutData(workoutData);
   };
@@ -87,41 +77,34 @@ function NewWorkoutPage(props) {
           </Typography>
         </ThemeProvider>
 
-      <ThemeProvider theme={props.colorTheme}>
-        <TableContainer
-          className="workoutTableContainer"
-          component={Paper}
-          sx={{ maxWidth: 750 }}
-        >
-          <Table
-            className="workoutTable"
-            // color="secondary"
-            // sx={{ maxWidth: 750 }}
-            // aria-label="simple table"
+        <ThemeProvider theme={props.colorTheme}>
+          <TableContainer
+            className="workoutTableContainer"
+            component={Paper}
+            sx={{ maxWidth: 750 }}
           >
-            <TableHead className="new-wkt-header">
-              <TableRow>
-                <TableCell className="table-cell" align="center">
-                  EXERCISE
-                </TableCell>
-                <TableCell className="table-cell" align="center">
-                  SETS x REPS
-                </TableCell>
-                <TableCell className="table-cell" align="center">
-                  WEIGHT
-                </TableCell>
-                <TableCell className="table-cell" align="center">
-                  <i className="fas fa-trash"></i>
-                </TableCell>
-              </TableRow>
-            </TableHead>
+            <Table className="workoutTable">
+              <TableHead className="new-wkt-header">
+                <TableRow>
+                  <TableCell className="table-cell" align="center">
+                    EXERCISE
+                  </TableCell>
+                  <TableCell className="table-cell" align="center">
+                    SETS x REPS
+                  </TableCell>
+                  <TableCell className="table-cell" align="center">
+                    WEIGHT
+                  </TableCell>
+                  <TableCell className="table-cell" align="center">
+                    <i className="fas fa-trash"></i>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
 
-            <TodoList setTodos={props.setTodos} todos={props.todos} />
-          </Table>
-        </TableContainer>
+              <TodoList setTodos={props.setTodos} todos={props.todos} />
+            </Table>
+          </TableContainer>
         </ThemeProvider>
-
-        {/* // testing by adding props after moving state to App */}
 
         <div className="input-container">
           <Input
@@ -131,30 +114,28 @@ function NewWorkoutPage(props) {
             setInputSetsRepsText={setInputSetsRepsText}
             inputWeightText={inputWeightText}
             setInputWeightText={setInputWeightText}
-            // // testing by adding props after moving state to App
             todos={props.todos}
             setTodos={props.setTodos}
             theme={props.colorTheme}
           />
           <ThemeProvider theme={props.colorTheme}>
-          <Button
-            onClick={saveWorkoutHandler}
-            className="save-wkt-btn"
-            variant="contained"
-            size="small"
-            style={{
-              maxWidth: "100px",
-              maxHeight: "75px",
-              minWidth: "100px",
-              minHeight: "75px",
-            }}
-          >
-            Save Workout
-          </Button>
+            <Button
+              onClick={saveWorkoutHandler}
+              className="save-wkt-btn"
+              variant="contained"
+              size="small"
+              style={{
+                maxWidth: "100px",
+                maxHeight: "75px",
+                minWidth: "100px",
+                minHeight: "75px",
+              }}
+            >
+              Save Workout
+            </Button>
           </ThemeProvider>
         </div>
 
-        {/* // testing by adding props after moving state to App */}
         {modalIsOpen && (
           <CustomModal
             inputTitle={props.inputTitle}
