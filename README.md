@@ -1,7 +1,5 @@
 # Workout Web App
 
-(** Update URL for GH Pages after hosting **)
-
 A workout web application built with React.js to build, save, and view workouts
 
 ## Project Description
@@ -41,4 +39,4 @@ A few additions I have in mind:
 
 Hosted with GitHub Pages
 
-Link: [Workout Web App](https://charlescarr.github.io/personal-portfolio-website/)
+Link: [Workout Web App](https://charlescarr.github.io/react-workout-app/)
