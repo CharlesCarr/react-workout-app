@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    /* background-image: linear-gradient(120deg, #808080 0%, #A9A9A9 100%); */
+    background-color: #62727b;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+  }
+  header {
+    font-size: 2rem;
+  }
+  
+  header,
+  form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form input,
+  form button {
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+  }
+  form button {
+    color: black;
+    background: #f7fffe;
+    cursor: pointer;
+    /* transition: all 0.3s ease; */
+  }
+  form button:hover {
+    background: black;
+    color: white;
+  }
+  .todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flextest {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .todo-list {
+    min-width: 60%;
+    list-style: none;
+  }
+  
+  .todo {
+    margin: 0.5rem;
+    background: white;
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* transition: all 1s ease; */
+  }
+  .filter-todo {
+    padding: 1rem;
+  }
+  .todo li {
+    flex: 1;
+  }
+  
+  .trash-btn,
+  .complete-btn {
+    /* background: #ff6f47; */
+    background: #62727b;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .todo-item {
+    padding: 0rem 0.5rem;
+  }
+  
+  .fa-trash,
+  .fa-check {
+    pointer-events: none;
+  }
+  
+  .fall {
+    /* transform: translateY(10rem) rotateZ(20deg); */
+    opacity: 0;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  
+  /*CUSTOM SELECTOR */
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-image: none;
+  }
+  
+  /* Custom Select */
+  .select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  select {
+    color: #ff6f47;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    width: 12rem;
+  }
+  /* Arrow */
+  .select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background: #ff6f47;
+    cursor: pointer;
+    pointer-events: none;
+  }
+  /* Transition */
+  /*
+  .select:hover::after {
+    transform: scale(1.5);
+  }
+  */
+
+
+
+/* Below are my additions to switch this to a workout app */
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-form {
+  margin-right: 5px;
+}
+
+.todo-item {
+  border: 1px black solid;
+}
+
+.submitExercise {
+  cursor: pointer;
+  transition: all 300ms ease-in;
+}
+.submitExercise:hover {
+  color: black;
+}
+
+.workoutTable {
+  background-color: #37474f;
+  width: 100%;
+  display: flex;
+}
+
+.confirm-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.week-days {
+  height: 30÷0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.today-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ind-workout-container {
+  margin-top: 2%;
+  margin-bottom: 4%;
+  width: 75%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.5%;
+}
+
+.all-workout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.5%;
+  width: 75%;
+  background-color: #37474f;
+  box-shadow: 1px 2px 3px #37474f;
+  border: 4px solid #102027;
+  padding: 2% 3%;
+  border-radius: 5px;
+}
+
+.workout-title {
+  margin-bottom: 3%;
+  margin-top: 1%;
+  color: white;
+  border: 1px solid #eceff1;
+  padding: 1.5%;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px #eceff1;
+  background-color: #37474f;
+}
+
+ .table-cell {
+  border: 2px solid black;
+  color: #eceff1 !important;
+}
+
+.head-cell {
+  background-color: #102027;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin-top: 3%;
+}
+
+.workoutTableContainer {
+  border: 2px solid black;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-wkt-header {
+  background-color: #102027 !important;
+  
+}
+
+.pagetitle {
+  color: '#102027' !important;
+  /* color: '#81c784' !important; */
+  font-weight: bold !important;
+}
+
+.fullmodal {
+  background-color: #62727b !important;
+}
+
+.modal {
+  background-color: #37474f !important;
+}
+
+.selectday {
+  background-color: #102027 !important;
+  color: #eceff1;
+  width: 100%;
+}
+
+#demo-simple-select-label {
+  color: #eceff1 !important;
+}
+
+.selecttext {
+  margin-bottom: 10% !important;
+}
+/* .todo-input {
+  color: red !important;
+} */
+
+@media only screen and (max-width: 600px) {
+  .all-workout-container {
+    width: 95%;
+  }
+  .input-container {
+    flex-direction: column;
+    margin-top: 3%;
+  }
+  .input-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  .submitExercise {
+    align-self: flex-end;
+    margin-top: 2%;
+  }
+}
