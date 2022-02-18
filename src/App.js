@@ -22,7 +22,7 @@ function App() {
 
   // function to be able to access the workouts from New Workout - "lifting the state up"
   const getWorkoutData = (data) => {
-    const workoutsData = data;
+    // const workoutsData = data;
   };
 
   const colorTheme = createTheme({
