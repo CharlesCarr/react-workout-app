@@ -1,6 +1,6 @@
 # Workout Web App
 
-A workout web application built with React.js to build, save, and view workouts
+V1 of workout web application built with React.js to build, save, and view workouts
 
 ## Project Description
 
